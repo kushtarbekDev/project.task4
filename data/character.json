@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Satoru Gojo",
+    "age": "29",
+    "nameAnime": "Jujutsu Kaisen",
+    "photo": "https://us.oricon-group.com/upimg/detail/2000/2821/img660/Satoru-Gojo-from-jjk-EP3%20(8).jpg"
+  },
+  {
+    "name": "Эрен Йегер",
+    "age": "19",
+    "nameAnime": "Атака Титанов",
+    "photo": "https://i.pinimg.com/736x/8c/53/b0/8c53b0d63904e01025229f3a842e925d.jpg"
+  },
+  {
+    "name": "Танджиро Камадо",
+    "age": "15",
+    "nameAnime": "Клинок Рассекающий Демонов",
+    "photo": "https://cdn.ananasposter.ru/image/cache/catalog/poster/anime/81/17538-1000x830.jpg"
+  },
+  {
+    "name": "Дэндзи",
+    "age": "17",
+    "nameAnime": "Человек с бензопилой",
+    "photo": "https://shikimori.one/uploads/poster/characters/170732/main_2x-91dbb2205dbbab91c70c7dd20e6cd036.webp"
+  }
+]
