@@ -41,3 +41,42 @@ function avtoTab() {
   showTabContent(avtoIndex);
 }
 setInterval(avtoTab, 3000);
+
+const conventerSom = document.querySelector("#som");
+const conventerUsd = document.querySelector("#usd");
+const conventerEur = document.querySelector("#eur");
+
+conventerSom.addEventListener("input", (event) => convertor(event));
+conventerUsd.addEventListener("input", (event) => convertor(event));
+conventerEur.addEventListener("input", (event) => convertor(event));
+
+function convertor(event) {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "/data/convertor.json");
+  xhr.setRequestHeader("content-type", "application/json");
+  xhr.send();
+  console.log(event);
+
+  xhr.onload = () => {
+    const { eur, usd } = JSON.parse(xhr.responseText);
+    let newValue = Number(event.target.value);
+    if (event.target.id === "som") {
+      let valueUsd = newValue / usd;
+      let valueEur = newValue / eur;
+
+      conventerUsd.value = valueUsd.toFixed(2);
+      conventerEur.value = valueEur.toFixed(2);
+    } else if (event.target.id === "usd") {
+      let valueSom = newValue * usd;
+      let valueEur = valueSom / eur;
+      conventerEur.value = valueEur.toFixed(2);
+      conventerSom.value = valueSom.toFixed(2);
+    } else if (event.target.id === "eur") {
+      let valueSom = newValue * eur;
+      let valueUsd = valueSom / usd;
+
+      conventerSom.value = valueSom.toFixed(2);
+      conventerUsd.value = valueUsd.toFixed(2);
+    }
+  };
+}
